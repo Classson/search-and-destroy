@@ -2,8 +2,29 @@
 
 //Complete this algo
 const isLoop = (linkedlist) => {
-
+  let loopVals = {};
+  let currentNode = linkedlist.head;
+  while(currentNode){
+    if(loopVals[currentNode.value]){
+      return true
+    } else {
+      loopVals[currentNode.value] = 1;
+      if(!currentNode.next){
+        return false
+      } else {
+        currentNode = currentNode.next
+      }
+    }
+  }
 };
+
+// const isLoop = (linkedlist) => {
+//   if(linkedlist.tail.next){
+//     return true
+//   } else {
+//     return false
+//   }
+// }
 
 
 /*
